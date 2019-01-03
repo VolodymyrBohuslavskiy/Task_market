@@ -1,0 +1,37 @@
+body {
+    background: slategrey;
+    width: 90%;
+    padding: auto;
+}
+
+a {
+    text-decoration: none;
+    margin: 20px;
+}
+
+.menu {
+    text-align: center
+}
+
+.towars{
+    height: 80%;
+}
+.towar {
+    margin: 10px;
+    text-align: center;
+    display: inline-block;
+    background: aliceblue;
+    border-radius: 5px;
+    border: 2px solid blue;
+    text-decoration: blue;
+    padding: 5px;
+}
+
+
+
+
+.form {
+    text-align: center;
+margin-bottom: 10px;
+}
+

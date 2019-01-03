@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title th:text="'Магазин '+${all.size()+' товарів'}"></title>
+</head>
+<body class="p-3 mb-2 bg-secondary text-white">
+
+
+<div class="menu">
+    <a href="/"><input type="button" value="Всі"></a>
+    <a href="/one"><input type="button" value="До 1000"></a>
+    <a href="/two"><input type="button" value="До 2000"></a>
+    <a href="/ten"><input type="button" value="Останні 10"></a>
+    <a href="/abc"><input type="button" value="По алфавіту"></a>
+</div>
+
+<div class="towars">
+<div class="towar" th:each="towar : ${all}">
+    <a th:href="@{'towar-'+${towar.getId()}}">
+
+        <p th:text="${towar.getId()}"></p>
+        <p th:text="${towar.getTitel()}"></p>
+        <p th:text="${towar.getDescription()}"></p>
+        <p th:text="${towar.getPrice()}+'грн'"></p>
+    </a>
+</div>
+</div>
+
+<div class="form">
+    <form action="/add" method="post">
+        <input type="text" name="titel" placeholder="Titel">
+        <input type="text" name="description" placeholder="Description">
+        <input type="number" name="price" placeholder="Price">
+
+        <input type="submit" value="ADD">
+    </form>
+</div>
+
+
+</body>
+</html>
